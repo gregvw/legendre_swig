@@ -34,6 +34,8 @@ double legendreEvalPt(double x, double *a,int n)
 void legendreEval(double *x, int m1, double *f, int m2, double *a, int n)
 {
     int j;
+    
+    #pragma omp parallel for
     for(j=0;j<m1;++j)
     {
         f[j] = legendreEvalPt(x[j],a,n);
