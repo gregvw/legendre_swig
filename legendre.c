@@ -1,7 +1,7 @@
 #include "legendre.h"
 
 /* Evaluate the Legendre series with coefficients a[0],..,a[n-1] at the point x */ 
-double legendreEval(double x, double *a,int n)
+double legendreEvalPt(double x, double *a,int n)
 {
     // The value of the expansion at the given point
     double f = a[0];
@@ -29,4 +29,16 @@ double legendreEval(double x, double *a,int n)
     }
     return f;
 }
+
+/* Evaluate the Legendre series on an array of points */
+void legendreEval(double *x, int m1, double *f, int m2, double *a, int n)
+{
+    int j;
+    for(j=0;j<m1;++j)
+    {
+        f[j] = legendreEvalPt(x[j],a,n);
+    }
+}
+
+
 
