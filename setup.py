@@ -21,6 +21,8 @@ except AttributeError:
 legendre_module = Extension('_legendre',
                            sources=['legendre.i', 'legendre.c'],
                            include_dirs = [numpy_include],
+                           extra_compile_args = ['-fopenmp','-fpic'],
+                           extra_link_args = ['-lgomp']
                            )
 
 setup (name = 'legendre',

@@ -6,8 +6,8 @@ from pyLegendre import legendreEval
 
 if __name__ == '__main__':
 
-    m = 200
-    n = 200
+    m = 500
+    n = 500
 
     a = np.random.randn(n)
     x = np.linspace(-1,1,m)
